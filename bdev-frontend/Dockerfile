@@ -3,6 +3,8 @@ FROM node:10.15.3
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
 
+RUN npm install -g react-scripts
+
 WORKDIR /usr/src/app
 
 COPY package*.json /usr/src/app/
