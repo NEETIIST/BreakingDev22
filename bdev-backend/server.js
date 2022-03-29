@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = 4000;
+const MONGO_HOST = 'mongodb';
+const MONGO_PORT = 27017;
 
 const passport = require("passport");
 const users = require("./routes/api/users");
@@ -58,7 +60,7 @@ io.listen(8000);
 
 app.set('io', io);
 
-mongoose.connect('mongodb://127.0.0.1:27017/bdev', { useNewUrlParser: true });
+mongoose.connect('mongodb://'+MONGO_HOST+':'+MONGO_PORT+'/bdev', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
