@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json /usr/src/app/
 
-RUN npm install  --legacy.peer-deps && mv /usr/src/app/node_modules /node_modules && npm cache clean --force
+RUN npm install  --legacy-peer-deps && mv /usr/src/app/node_modules /node_modules && npm cache clean --force
 
 COPY . /usr/src/app
 
